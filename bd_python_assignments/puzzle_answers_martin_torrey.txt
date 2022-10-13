@@ -1,0 +1,502 @@
+1.
+try:
+    items = [int(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    if items.count(19) == 2 and items.count(5) >= 3:
+        print("True")
+    else:
+        print("False")
+except:
+    print("Unexpected input.")
+
+output:
+[19, 19, 5, 5, 5, 5, 5, 5, 5, 4, 3, 4, 5, 6, 7, 8, 9]
+True
+
+[19, 5, 5, 5]
+False
+
+2.
+try:
+    items = [int(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    if len(items) == 8 and items.count(items[4]) == 3:
+        print("True")
+    else:
+        print("False")
+except:
+    print("Unexpected input.")
+
+output:
+[19, 19, 15, 5, 5, 5, 1, 2]
+True
+
+[1, 2, 3, 4, 5, 6, 7, 8]
+False
+
+[5, 5, 5, 5, 5, 5]
+False
+
+3.
+try:
+    inp = int(input("Enter the number : "))
+    print(inp)
+    if inp % 34 == 4 and inp > 4**4:
+        print("True")
+    else:
+        print("False")
+except:
+    print("Unexpected input.")
+
+output:
+912
+False
+
+854
+True
+
+4.
+try:
+    inp = int(input("Enter the number : "))
+    print(inp)
+    piles = []
+    piles.append(inp)
+    while len(piles) != inp:
+        piles.append(piles[-1] + 2)
+    print(piles)
+except:
+    print("Unexpected input.")
+
+output:
+5
+[5, 7, 9, 11, 13]
+
+17
+[17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49]
+
+5.
+try:
+    items = [str(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    if items[len(items)-2] in items[len(items)-1] and items[len(items)-2] != items[len(items)-1]:
+        print("True")
+    else:
+        print("False")
+except:
+    print("Unexpected input.")
+
+output:
+['a', 'b', 'a', 'ba']
+True
+
+['a', 'b', 'a', 'cc']
+False
+
+6.
+one = [i * 10 for i in range(99)]
+print(one)
+if one == one:
+    print("True")
+else:
+    print("False")
+two = [i * 20 for i in range(99)]
+print(two)
+if two == one:
+    print("True")
+else:
+    print("False")
+
+output:
+[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500, 510, 520, 530, 540, 550, 560, 570, 580, 590, 600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 730, 740, 750, 760, 770, 780, 790, 800, 810, 820, 830, 840, 850, 860, 870, 880, 890, 900, 910, 920, 930, 940, 950, 960, 970, 980]
+True
+
+[0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400, 420, 440, 460, 480, 500, 520, 540, 560, 580, 600, 620, 640, 660, 680, 700, 720, 740, 760, 780, 800, 820, 840, 860, 880, 900, 920, 940, 960, 980, 1000, 1020, 1040, 1060, 1080, 1100, 1120, 1140, 1160, 1180, 1200, 1220, 1240, 1260, 1280, 1300, 1320, 1340, 1360, 1380, 1400, 1420, 1440, 1460, 1480, 1500, 1520, 1540, 1560, 1580, 1600, 1620, 1640, 1660, 1680, 1700, 1720, 1740, 1760, 1780, 1800, 1820, 1840, 1860, 1880, 1900, 1920, 1940, 1960]
+False
+
+7.
+try:
+    items = [int(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    targetsum = len(items)
+    itemsum = 0
+    for i in items:
+        itemsum = itemsum + i
+    if itemsum == targetsum:
+        print("True")
+    else:
+        print("False")
+except:
+    print("Unexpected input.")
+
+output:
+[5]
+False
+
+[0, 0, 0, 0, 0, 0, 7]
+True
+
+8.
+import re
+
+items = input("Enter string input ")
+print(items)
+splitreg = re.split(r"([ ,]+)", items)
+answer = [splitreg[::2], splitreg[1::2]]
+
+print(answer)
+
+output:
+i am a dog, woof woof. i swear
+[['i', 'am', 'a', 'dog', 'woof', 'woof.', 'i', 'swear'], [' ', ' ', ' ', ', ', ' ', ' ', ' ']]
+
+9.
+try:
+    items = [int(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    range_end = len(items) if len(items) < 20 else 20
+    print(all([items[i]!=items[i+1] for i in range(len(items)-1)]) and len(set(items))==4)
+except:
+    print("Unexpected input.")
+
+output:
+[1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
+True
+
+[1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 2, 1, 3, 4, 1, 1]
+False
+
+10.
+inp = "( ) ()(()) ((())) (()())"
+print(inp)
+answer = []
+closedP = ""
+for s in inp.replace(' ',''):
+    closedP+=s
+    if closedP.count("(")==closedP.count(")"):
+        answer.append(closedP)
+        closedP = ""
+print(answer)
+
+output:
+( ) ()(()) ((())) (()())
+['()', '()', '(())', '((()))', '(()())']
+
+(()()()())(())((()))()()  (()((((())  ()((()))))(()))))
+['(()()()())', '(())', '((()))', '()', '()', '(()((((())()((()))))(())))']
+
+11.
+try:
+    items = [int(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    threshold = int(input("Enter the threshold : "))
+    print("Threshold: ", threshold)
+    indexes = list(i for i in range(len(items)) if items[i] <= threshold)
+    print(indexes)
+except:
+    print("Unexpected input.")
+
+output:
+[3, 3, 4, 3, 3, 4, 3, 3, 4]
+Threshold:  3
+[0, 1, 3, 4, 6, 7]
+
+[101, 102, 103, 201, 202, 203, 101, 102, 103, 1, 2, 3]
+Threshold:  102
+[0, 1, 6, 7, 9, 10, 11]
+
+12.
+try:
+    items = [str(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    palibool = []
+    for i in items:
+        s1 = i
+        s2 = s1[::-1]
+        if s1 == s2:
+            palibool.append(True)
+        else:
+            palibool.append(False)
+    print(palibool)
+except:
+    print("Unexpected input.")
+
+output:
+['ace', 'racecar', 'tacocat', 'tree', 'blimp']
+[False, True, True, False, False]
+
+13. 
+try:
+    items = [str(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    pref = str(input("Enter the prefix : "))
+    print("Prefix : ", pref)
+    answer = list(str(i) for i in items if i.startswith(pref))
+    print(answer)        
+except:
+    print("Unexpected input.")
+
+output:
+['car', 'cat', 'god', 'dog', 'con', 'act', 'can']
+Prefix :  ca
+['car', 'cat', 'can']
+
+14. 
+try:
+    items = [str(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    answer = list(int(len(i)) for i in items)
+    print(answer)
+except:
+    print("Unexpected input.")
+
+output:
+['cat', 'dog', 'tree', 'forge', 'guitar', 'cantelope']
+[3, 3, 4, 5, 6, 9]
+
+15.
+try:
+    items = [str(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    answer = items[0]
+    for i in items:
+        if len(i) > len(answer):
+            answer = i
+    print(answer)
+except:
+    print("Unexpected input.")
+
+output:
+['tree', 'firetruck', 'tirade', 'snapple', 'based', 'god', 'donkey', 'kong', 'tuberculosis', 'triumphant', 'onomatopoeia', 'chat']
+tuberculosis
+
+16.
+try:
+    items = [str(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    ss = str(input("Enter the substring : "))
+    print("Substring : ", ss)
+    answer = list(str(i) for i in items if ss in i)
+    print(answer)        
+except:
+    print("Unexpected input.")
+
+output:
+['fourteen', 'train', 'grate', 'grain', 'brown', 'tree']
+Substring :  rt
+['fourteen']
+
+17.
+try:
+    items = int(input("Enter the number: "))
+    print(items)
+    answer = "".join(list(str(i)+ " " for i in range(0,items+1)))
+    print(answer)
+except:
+    print("Unexpected input.")
+
+output:
+15
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
+
+18.
+try:
+    items = [[1, 3, 2, 32, 19],[19],[2, 48, 19],[9, 35, 4,],[3, 19]]
+    print(items)
+    trig = int(input("Enter the number: "))
+    print("Target value:",trig)
+    answer = []
+    for i in range(len(items)):
+        temp = items[i]
+        for x in range(len(items[i])):
+            if temp[x] == trig:
+                answer.append([i,x])
+    print(answer)
+except:
+    print("Unexpected input.")
+
+output:
+[[1, 3, 2, 32, 19], [19], [2, 48, 19], [9, 35, 4], [3, 19]]
+Target value: 19
+[[0, 4], [1, 0], [2, 2], [4, 1]]
+
+19.
+try:
+    items = str(input("Enter the list items : "))
+    print(items)
+    if " " in items:
+        answer = list(items.split(" "))
+    elif "," in items:
+        answer = list(items.split(","))
+    else:
+        answer = list(items[1:len(items):2])
+    print(answer)
+except:
+    print("Unexpected input.")
+
+output:
+a,b,c,d
+['a', 'b', 'c', 'd']
+
+a b c d
+['a', 'b', 'c', 'd']
+
+abcd
+['b', 'd']
+
+20.
+try:
+    items = [int(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    ranged = list(i for i in range(items[0],items[len(items)-1],items[1]-items[0]))
+    ranged.append(items[-1])
+    if items == ranged and items[0] < items[1]:
+        print("increasing")
+    elif items == ranged and items[0] > items[1]:
+        print("decreasing")
+    else:
+        print("not monotonic sequence")
+except:
+    print("Unexpected input.")
+
+output:
+[1, 2, 5, 7, 2, 7]
+not monotonic sequence
+
+[1, 3, 5, 7, 9]
+increasing
+
+[9, 7, 5, 3, 1]
+decreasing
+
+21.
+try:
+    items = [str(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    answer = [len(i.split(" ")[-1]) == 1 for i in items]
+    print(answer)
+except:
+    print("Unexpected input.")
+
+output:
+['cat', 'car', 'fear', 'center']
+[False, False, False, False]
+
+22.
+try:
+    items = str(input("Enter the list items : "))
+    print(items)
+    answer = sum(map(ord,filter(str.isupper,items)))
+    print(answer)
+except:
+    print("Unexpected input.")
+
+output:
+PytHon ExerciSEs
+373
+
+23.
+try:
+    items = [int(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    answer = []
+    for i in range(1,len(items)):
+        if items[i] < items[i-1]:
+            answer.append(i)
+    print(answer)
+except:
+    print("Unexpected input.")
+
+output:
+[0, -1, 3, 8, 5, 9, 8, 14, 2, 4, 3, -10, 10, 17, 41, 22, -4, -4, -15, 0]
+[1, 4, 6, 8, 10, 11, 15, 16, 18]
+
+24.
+try:
+    items = [int(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    answer = [max(items[:i]) for i in range(1, len(items) + 1)]
+    print(answer)
+except:
+    print("Unexpected input.")
+
+output:
+[1, 19, 5, 15, 5, 25, 5]
+[1, 19, 19, 19, 19, 25, 25]
+
+25.
+try:
+    items = [str(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    print(bin(int(items[0],2) ^ int(items[1],2)))
+except:
+    print("Unexpected input.")
+
+outputs:
+['0001', '1101']
+0b1100
+
+26.
+try:
+    items = [str(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    maxval = float(items[0])
+    for i in items:
+        i = i.replace(",",".")
+        if float(i) > maxval:
+            maxval = float(i)
+    print(maxval)
+
+except:
+    print("Unexpected input.")
+
+output:
+['101', '102,5', '102.3', '201,2']
+201.2
+
+27.
+try:
+    items = [int(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    print(sum(items)/len(items))
+except:
+    print("Unexpected input.")
+
+output:
+[4, -5, 17, -9, 14, 108, -9]
+17.142857142857142
+
+28.
+try:
+    items = [str(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    print(max(items,key=lambda i: len(set(i))))
+except:
+    print("Unexpected input.")
+
+output:
+['cat', 'catatatatctsa', 'abcdefghijklmnop', '1234567898776543', 'foo', 'uniquwe']
+abcdefghijklmnop
+
+29.
+try:
+    items = [int(item) for item in input("Enter the list items : ").split()]
+    print(items)
+    answer = []
+    for i in items:
+        for x in items:
+            if i + x == 0:
+                answer.append([items.index(i),items.index(x)])
+    print(answer)
+except:
+    print("Unexpected input.")
+
+output:
+[1, -4, 6, 7, -6, 4]
+[[1, 5], [2, 4], [4, 2], [5, 1]]
+
+30.
+text = [['this', 'list', 'is', 'narrow'], ['I', 'am', 'shorter but wider']] 
+print(min(text,key=lambda i:sum(len(x)for x in i)))
+
+output:
+['this', 'list', 'is', 'narrow']

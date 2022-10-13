@@ -1,0 +1,32 @@
+Intermediate Questions:
+1.
+    CODE:
+        try:
+            items = [int(item) for item in input("Enter the list items : ").split()]
+            a = False
+            for num in items:
+                for num2 in items:
+                    if num2 == num:
+                        a = True
+            if a:
+                print("There are repeating numbers.")
+            else:            
+                print("There are no repeating numbers.")
+        except:
+            print("Unexpected input, terminating.")
+    Test input: 1 2 3 4 5 4
+    Test output: "There are repeating numbers."
+2.
+    CODE:
+        from itertools import permutations
+
+        characters = "aeiou"
+        answers = list(permutations(characters))
+        words = []
+        for a in answers:
+            words.append("".join(a))
+        print(words)
+    OUTPUT: ['aeiou', 'aeiuo', 'aeoiu', 'aeoui', 'aeuio', 'aeuoi', 'aieou', 'aieuo', 'aioeu', 'aioue', 'aiueo', 'aiuoe', 'aoeiu', 'aoeui', 'aoieu', 'aoiue', 'aouei', 'aouie', 'aueio', 'aueoi', 'auieo', 'auioe', 'auoei', 'auoie', 'eaiou', 'eaiuo', 'eaoiu', 'eaoui', 'eauio', 'eauoi', 'eiaou', 'eiauo', 'eioau', 'eioua', 'eiuao', 'eiuoa', 'eoaiu', 'eoaui', 'eoiau', 'eoiua', 'eouai', 'eouia', 'euaio', 'euaoi', 'euiao', 'euioa', 'euoai', 'euoia', 'iaeou', 'iaeuo', 'iaoeu', 'iaoue', 'iaueo', 'iauoe', 'ieaou', 'ieauo', 'ieoau', 'ieoua', 'ieuao', 'ieuoa', 'ioaeu', 'ioaue', 'ioeau', 'ioeua', 'iouae', 'iouea', 'iuaeo', 'iuaoe', 'iueao', 'iueoa', 'iuoae', 'iuoea', 'oaeiu', 'oaeui', 'oaieu', 'oaiue', 'oauei', 'oauie', 'oeaiu', 'oeaui', 'oeiau', 'oeiua', 'oeuai', 'oeuia', 'oiaeu', 'oiaue', 'oieau', 'oieua', 'oiuae', 'oiuea', 'ouaei', 'ouaie', 'oueai', 'oueia', 'ouiae', 'ouiea', 'uaeio', 'uaeoi', 'uaieo', 'uaioe', 'uaoei', 'uaoie', 'ueaio', 'ueaoi', 'ueiao', 'ueioa', 'ueoai', 'ueoia', 'uiaeo', 'uiaoe', 'uieao', 'uieoa', 'uioae', 'uioea', 'uoaei', 'uoaie', 'uoeai', 'uoeia', 'uoiae', 'uoiea']
+3.
+    CODE:
+        
