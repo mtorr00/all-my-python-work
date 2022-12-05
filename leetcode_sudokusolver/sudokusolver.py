@@ -2,7 +2,6 @@ board = [["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".",
 print("Test Board: ")
 for x in board:
     print(x)
-
 class Solution:
     def solveSudoku(self, board) -> None:
         def getBit(x, k): return (x >> k) & 1
